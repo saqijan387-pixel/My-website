@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Mehdi hassan — Product Designer & Developer</title>
+	<meta name="description" content="Portfolio of Jane Doe — projects, skills, and contact">
+	<link rel="stylesheet" href="style.css">
+	<script defer src="script.js"></script>
+</head>
+
+<body>
+	<!-- Dynamic background shapes -->
+	<div class="bg-animated">
+		<div class="bg-shape bg-shape1"></div>
+		<div class="bg-shape bg-shape2"></div>
+		<div class="bg-shape bg-shape3"></div>
+	</div>
+
+	<nav class="navbar glass">
+		<div class="logo">Mehdi hassan</div>
+		<ul class="nav-links">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#skills">Skills</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+		<div class="nav-actions">
+			<a class="resume-btn" href="#" id="downloadResume">Download Resume</a>
+			<button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+		</div>
+	</nav>
+
+	<header id="home" class="hero hero-portfolio glass">
+		<div class="hero-inner">
+			<div class="hero-meta">
+				<h1 class="hero-title gradient-text">Mehdi hassan</h1>
+				<p class="hero-role">Product Designer & Front-end Developer</p>
+				<p class="hero-sub">I build delightful interfaces & craft thoughtful user experiences.</p>
+				<div class="hero-actions">
+					<a href="#projects" class="cta-btn">View Projects</a>
+					<a href="#contact" class="ghost-btn">Hire me</a>
+				</div>
+			</div>
+			<div class="hero-avatar" aria-hidden="true">
+				<!-- Local placeholder image; replace `images/me.svg` with your real photo file (e.g., images/me.jpg) -->
+				<img src="images/me.svg" alt="Your Photo" class="avatar-img">
+				<div class="avatar-glow"></div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section id="projects" class="section">
+			<div class="section-header">
+				<h2>Selected Projects</h2>
+				<div class="filters" role="tablist" aria-label="Project categories">
+					<button class="filter active" data-filter="all">All</button>
+					<button class="filter" data-filter="web">Web</button>
+					<button class="filter" data-filter="mobile">Mobile</button>
+					<button class="filter" data-filter="design">Design</button>
+				</div>
+			</div>
+
+			<div class="projects-grid" id="projectsGrid">
+				<article class="project" data-type="web" data-reveal>
+					<div class="project-media" style="background:linear-gradient(135deg,#4f8cff,#6ee7b7)">
+						<div class="project-label">Web App</div>
+					</div>
+					<div class="project-body">
+						<h3>Analytics Dashboard</h3>
+						<p>Interactive charts and real-time metrics for business insights.</p>
+						<div class="project-actions">
+							<button class="btn" data-project='{"title":"Analytics Dashboard","desc":"Built with D3 and React. Real-time websockets, custom viz.","tech":["React","D3","Node.js"]}'>Details</button>
+						</div>
+					</div>
+				</article>
+
+				<article class="project" data-type="mobile" data-reveal>
+					<div class="project-media" style="background:linear-gradient(135deg,#ff9a9e,#fecfef)">
+						<div class="project-label">Mobile</div>
+					</div>
+					<div class="project-body">
+						<h3>Fitness Tracker</h3>
+						<p>Cross-platform app to track workouts and goals with delightful UX.</p>
+						<div class="project-actions">
+							<button class="btn" data-project='{"title":"Fitness Tracker","desc":"Flutter-based mobile app with local persistence and health sync.","tech":["Flutter","SQLite"]}'>Details</button>
+						</div>
+					</div>
+				</article>
+
+				<article class="project" data-type="design" data-reveal>
+					<div class="project-media" style="background:linear-gradient(135deg,#ffd27f,#ff9a9e)">
+						<div class="project-label">Design</div>
+					</div>
+					<div class="project-body">
+						<h3>Brand Refresh</h3>
+						<p>Complete visual identity redesign for a fintech startup.</p>
+						<div class="project-actions">
+							<button class="btn" data-project='{"title":"Brand Refresh","desc":"Identity, typography, and component library for scalable design.","tech":["Figma","Illustrator"]}'>Details</button>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="skills" class="section">
+			<h2>Skills</h2>
+			<div class="skills-grid">
+				<div class="skill">
+					<div class="skill-head"><strong>HTML & CSS</strong><span>95%</span></div>
+					<div class="skill-bar"><div style="width:95%"></div></div>
+				</div>
+				<div class="skill">
+					<div class="skill-head"><strong>JavaScript</strong><span>90%</span></div>
+					<div class="skill-bar"><div style="width:90%"></div></div>
+				</div>
+				<div class="skill">
+					<div class="skill-head"><strong>React</strong><span>85%</span></div>
+					<div class="skill-bar"><div style="width:85%"></div></div>
+				</div>
+				<div class="skill">
+					<div class="skill-head"><strong>Design</strong><span>88%</span></div>
+					<div class="skill-bar"><div style="width:88%"></div></div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="section contact">
+			<h2>Contact</h2>
+			<form id="contactForm">
+				<input id="name" type="text" placeholder="Your Name" required>
+				<input id="email" type="email" placeholder="Your Email" required>
+				<textarea id="message" placeholder="Your Message" required></textarea>
+				<button type="submit" class="btn primary">Send Message</button>
+			</form>
+		</section>
+	</main>
+
+	<!-- Project details modal -->
+	<div id="projectModal" class="modal" aria-hidden="true">
+		<div class="modal-panel" role="dialog" aria-modal="true">
+			<button class="modal-close" aria-label="Close">✕</button>
+			<h3 id="projTitle">Title</h3>
+			<p id="projDesc">Description</p>
+			<p id="projTech"></p>
+			<div style="margin-top:1rem;"><button class="btn" id="projClose">Close</button></div>
+		</div>
+	</div>
+
+	<button class="fab" id="fab" title="Scroll to top">▲</button>
+	<div id="toast" class="toast" aria-live="polite"></div>
+</body>
+</html>
+
